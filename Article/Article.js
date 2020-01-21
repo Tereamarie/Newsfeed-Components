@@ -85,6 +85,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+     title: 'Harry Potter\'s Article',
+     date: 'Janurary 21st, 2020',
+     firstParagraph: `Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire..`,
+     secondParagraph: `Squashy armchairs dirt on your nose brass scales crush the Sopophorous bean with flat side of silver dagger, releases juice better than cutting. Full moon Whomping Willow three turns should do it lemon drops. Locomotor trunks owl treats that will be 50 points, Mr. Potter. Witch Weekly, he will rise again and he will come for us, headmaster Erumpent horn. Fenrir Grayback horseless carriages ‘zis is a chance many would die for!`,
+     thirdParagraph: `Red hair crookshanks bludger Marauder’s Map Prongs sunshine daisies butter mellow Ludo Bagman. Beaters gobbledegook N.E.W.T., Honeydukes eriseD inferi Wormtail. Mistletoe dungeons Parseltongue Eeylops Owl Emporium expecto patronum floo powder duel. Gillyweed portkey, keeper Godric’s Hollow telescope, splinched fire-whisky silver Leprechaun O.W.L. stroke the spine. Chalice Hungarian Horntail, catherine wheels Essence of Dittany Gringotts Harry Potter. Prophecies Yaxley green eyes Remembrall horcrux hand of the servant. Devil’s snare love potion Ravenclaw, Professor Sinistra time-turner steak and kidney pie. Cabbage Daily Prophet letters from no one Dervish and Banges leg`
   }
 ];
 
@@ -112,3 +119,80 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+// function that creates a component
+ 
+function articleCreator(obj) {
+ 
+// Here is where i defined the new elements
+ 
+const article = document.createElement('div');
+ 
+const title = document.createElement('h2');
+ 
+title.textContent = obj.title;
+ 
+const date = document.createElement('p');
+ 
+date.textContent = obj.date;
+ 
+const firstParagraph = document.createElement('p');
+ 
+firstParagraph.textContent = obj.firstParagraph;
+ 
+const secondParagraph = document.createElement('p');
+ 
+secondParagraph.textContent = obj.secondParagraph;
+ 
+const thirdParagraph = document.createElement('p');
+ 
+thirdParagraph.textContent = obj.thirdParagraph;
+ 
+const button = document.createElement('span');
+ 
+button.textContent = '\u25bc';
+ 
+ 
+ 
+// Here is where i setup the structure of the elements
+ 
+article.appendChild(title);
+ 
+article.appendChild(date);
+ 
+article.appendChild(firstParagraph);
+ 
+article.appendChild(secondParagraph);
+ 
+article.appendChild(thirdParagraph);
+ 
+article.appendChild(button);
+ 
+ 
+ 
+// Here is where i  set class names
+ 
+article.classList.add('article');
+ 
+date.classList.add('date');
+ 
+button.classList.add('expandButton');
+ 
+ 
+ 
+// Here is where i added event listener to expandButton span
+ 
+button.addEventListener('click', () => {
+ 
+console.log("button clicked.");
+ 
+article.classList.toggle('article-open')
+ 
+})
+ 
+ 
+ 
+// Here is where i  return the entire component
+ 
+return article;
+ 
+}
