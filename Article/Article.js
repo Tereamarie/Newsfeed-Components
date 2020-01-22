@@ -176,7 +176,7 @@ button.addEventListener('click', () => {
 console.log("button clicked.");
  
 article.classList.toggle('article-open')
- 
+articleCreator.classList.toggle('article-close') 
 })
  
  
